@@ -374,16 +374,10 @@ The release includes the GRPO step-600 checkpoint. Download the assets you need 
 
 ---
 
-<a id="citation"></a>
-
-## 📚 Citation
-
-If you use NaviGen in your research, please cite the project once the paper or formal citation is available.
-
----
-
 <div align="center">
 
-**NaviGen: From personalized recommendation signals to visually generatable AIGC instructions.**
+If this project helps your research, please consider giving NaviGen a Star!
+
+Thanks for visiting NaviGen.
 
 </div>
