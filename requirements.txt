@@ -1,0 +1,35 @@
+# Core ML stack
+torch>=2.5.0
+transformers>=4.51.0
+datasets>=3.0.0
+accelerate>=1.0.0
+peft>=0.14.0
+trl>=0.18.0
+unsloth
+
+# Data and constrained decoding
+pyarrow>=15.0.0
+lm-format-enforcer>=0.10.0
+
+# Teacher LLM API
+dashscope>=1.20.0
+
+# Image generation
+diffusers>=0.33.0
+torchao>=0.9.0
+
+# Tokenizer/model helpers
+safetensors>=0.4.5
+sentencepiece>=0.2.0
+protobuf>=4.25.0
+
+# vLLM rollout for GRPO. Install in a Linux/CUDA environment that matches your torch build.
+vllm>=0.8.0
+
+# Optional environment-specific packages:
+# deepspeed
+# flash-attn
+# bitsandbytes
+#
+# OpenSora is not published as a simple PyPI dependency here. Install it from
+# the OpenSora project/environment before running generation/video_gen_opensora.py.
