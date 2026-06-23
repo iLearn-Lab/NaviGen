@@ -19,7 +19,7 @@
 
 <p>
   <a href="#concepts">🧭 Concepts</a> |
-  <a href="#pipeline">🏗️ Pipeline</a> |
+  <a href="#framework">🏗️ Framework</a> |
   <a href="#installation">⚙️ Installation</a> |
   <a href="#preprocessing">🧪 Preprocessing</a> |
   <a href="#training">🔥 Training</a> |
@@ -70,20 +70,14 @@ It couples behavioral collaborative codes with semantic textual codes, then trai
 
 ---
 
-<a id="pipeline"></a>
+<a id="framework"></a>
 
-## 🏗️ Pipeline
+## 🏗️ Framework
 
-```text
-captions + interaction logs
-  -> TID generation and identifier reasoning
-  -> CID vocabulary expansion
-  -> Stage-1 SFT for dual-identifier alignment
-  -> Stage-2 SFT for full personalized generation
-  -> GRPO with recommendation and instruction rewards
-  -> constrained cid2cid / cid2ins inference
-  -> Z-Image or OpenSora generation
-```
+<div align="center">
+  <img src="./assets/framework.png" width="100%" alt="NaviGen framework">
+  <p><em>NaviGen connects dual-identifier construction, staged SFT, GRPO alignment, constrained personalized inference, and downstream image/video generation.</em></p>
+</div>
 
 ---
 
@@ -93,6 +87,7 @@ captions + interaction logs
 
 ```text
 NaviGen/
+  assets/                     # Framework figure and project assets
   dataset/                    # Parquet splits for cid2tid, tid2cid, cid2cid, cid2ins, and catalog mapping
   preprocess/                 # TID generation, identifier reasoning, prompt search, CID vocab expansion
   train/                      # Stage-1 SFT, Stage-2 SFT, and GRPO training
@@ -108,9 +103,11 @@ NaviGen/
 
 ## ⚙️ Installation
 
-Create a Python environment and install the core stack:
+We recommend using `conda` to create a reproducible Python environment.
 
 ```bash
+conda create -n navigen python=3.10 -y
+conda activate navigen
 pip install -r requirements.txt
 ```
 
@@ -137,23 +134,6 @@ NAVIGEN_INFER_INPUT_DIR="./dataset"
 NAVIGEN_PID2CID2TID_PATH="./dataset/pid2cid2tid.parquet"
 NAVIGEN_ZIMAGE_PATH="./Z-Image-Turbo"
 ```
-
-Key settings:
-
-| Variable | Purpose |
-| --- | --- |
-| `DASHSCOPE_API_KEY` / `DASHSCOPE_API_KEYS` | Teacher LLM and judge credentials. Multiple keys are comma-separated. |
-| `NAVIGEN_TEACHER_MODEL` | Teacher model name for preprocessing and distillation. |
-| `NAVIGEN_QWEN3_BASE_MODEL` | Base Qwen3 model directory before CID vocabulary expansion. |
-| `NAVIGEN_CID_MODEL_DIR` | Expanded CID model/tokenizer directory used by SFT. |
-| `NAVIGEN_SFT_INPUT_DIR` / `NAVIGEN_INFER_INPUT_DIR` | Dataset roots for training and inference parquet files. |
-| `NAVIGEN_PID2CID2TID_PATH` | Catalog parquet used for CID vocabulary expansion and reward constraints. |
-| `NAVIGEN_STAGE1_OUTPUT_DIR` / `NAVIGEN_STAGE2_OUTPUT_DIR` | Stage-1 and Stage-2 SFT output roots. |
-| `NAVIGEN_STAGE2_FINAL_DIR` | Stage-2 model directory used as the default GRPO base. |
-| `NAVIGEN_RL_OUTPUT_DIR` | GRPO output root. |
-| `NAVIGEN_VLLM_HOST` / `NAVIGEN_VLLM_PORT` / `NAVIGEN_VLLM_BASE_URL` | vLLM rollout endpoint used during GRPO. |
-| `NAVIGEN_ZIMAGE_PATH` | Local Z-Image model directory. |
-| `NAVIGEN_OPENSORA_*` | OpenSora T5, VAE, DiT checkpoint paths and video defaults. |
 
 ---
 
