@@ -376,8 +376,8 @@ The release includes the GRPO step-600 checkpoint. Download the assets you need 
 
 <div align="center">
 
-If this project helps your research, please consider giving NaviGen a Star!
+🌟 If this project helps your research, please consider giving NaviGen a Star!
 
-Thanks for visiting NaviGen.
+<em>Thanks for visiting NaviGen ✨</em>
 
 </div>
