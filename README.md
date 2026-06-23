@@ -12,7 +12,10 @@
   <img src="https://img.shields.io/badge/🔥%20Training-SFT%20%2B%20GRPO-F2994A?style=for-the-badge&labelColor=1a1a2e" alt="training badge">
   <img src="https://img.shields.io/badge/🧠%20Backbone-Qwen3-8E44AD?style=for-the-badge&labelColor=1a1a2e" alt="backbone badge">
 </p>
-
+<div align="center">
+  <img src="./assets/framework.png" width="100%" alt="NaviGen framework">
+  <p><em>NaviGen connects dual-identifier construction, staged SFT, GRPO alignment, constrained personalized inference, and image/video generation.</em></p>
+</div>
 <p>
   <a href="https://huggingface.co/PillowTa1k/NaviGen">🤗 Model Checkpoints: PillowTa1k/NaviGen</a>
 </p>
@@ -67,17 +70,6 @@ It couples behavioral collaborative codes with semantic textual codes, then trai
 - `Dual identifier`: the coupled CID + TID representation used by NaviGen.
 - `cid2cid`: recommend the next CID from user history.
 - `cid2ins`: predict target TID and generate a personalized AIGC instruction.
-
----
-
-<a id="framework"></a>
-
-## 🏗️ Framework
-
-<div align="center">
-  <img src="./assets/framework.png" width="100%" alt="NaviGen framework">
-  <p><em>NaviGen connects dual-identifier construction, staged SFT, GRPO alignment, constrained personalized inference, and downstream image/video generation.</em></p>
-</div>
 
 ---
 
